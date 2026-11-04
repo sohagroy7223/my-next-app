@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const DashboardLayout = ({ children }) => {
@@ -19,10 +20,13 @@ const DashboardLayout = ({ children }) => {
         <ul className="menu bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar content here */}
           <li>
-            <a>Sidebar Item 1</a>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <Link href="/dashboard/profile">Profile</Link>
+          </li>
+          <li>
+            <Link href="/dashboard/overview">Overview</Link>
           </li>
         </ul>
       </div>
