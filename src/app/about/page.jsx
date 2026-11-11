@@ -2,6 +2,11 @@ import Image from "next/image";
 import React from "react";
 import image from "../../assets/images/vision.png";
 
+export const metadata = {
+  title: "about",
+  description: "...",
+};
+
 const AboutPage = () => {
   return (
     <div>

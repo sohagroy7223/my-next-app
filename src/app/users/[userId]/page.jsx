@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "userinfo",
+  description: "...",
+};
 const UserDetailsPage = async ({ params }) => {
   const { userId } = await params;
 
