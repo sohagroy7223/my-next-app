@@ -1,7 +1,12 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const DashboardLayout = ({ children }) => {
+  const pathName = usePathname();
+  console.log("pathname in dashboard", pathName);
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -20,13 +25,38 @@ const DashboardLayout = ({ children }) => {
         <ul className="menu bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar content here */}
           <li>
-            <Link href="/dashboard">Dashboard</Link>
+            <Link
+              className={
+                pathName === "/dashboard" ? "text-green-400 font-bold " : ""
+              }
+              href="/dashboard"
+            >
+              Dashboard
+            </Link>
           </li>
           <li>
-            <Link href="/dashboard/profile">Profile</Link>
+            <Link
+              className={
+                pathName === "/dashboard/profile"
+                  ? "text-green-400 font-bold "
+                  : ""
+              }
+              href="/dashboard/profile"
+            >
+              Profile
+            </Link>
           </li>
           <li>
-            <Link href="/dashboard/overview">Overview</Link>
+            <Link
+              className={
+                pathName === "/dashboard/overview"
+                  ? "text-green-400 font-bold "
+                  : ""
+              }
+              href="/dashboard/overview"
+            >
+              Overview
+            </Link>
           </li>
         </ul>
       </div>
