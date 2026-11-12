@@ -1,17 +1,17 @@
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 
 export const metadata = {
   title: "users",
-  description: "All users info ",
+  description: "",
 };
 
 const UsersPage = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await res.json();
-  console.log(users);
+  // console.log(users);
   return (
-    <div>
+    <Suspense fallback={"loading"}>
       <div className="grid md:grid-cols-3 gap-3 mt-10">
         {users.map((user) => (
           <div key={user.id} className="card card-border bg-base-100 ">
@@ -27,7 +27,7 @@ const UsersPage = async () => {
           </div>
         ))}
       </div>
-    </div>
+    </Suspense>
   );
 };
 

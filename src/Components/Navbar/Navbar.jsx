@@ -1,23 +1,75 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
+  const pathName = usePathname();
+  console.log("path name in navbar", pathName);
+
   const links = (
     <>
       <li>
-        <Link href="/about">About</Link>
+        <Link
+          className={
+            pathName === "/" ? "text-green-400 font-bold underline" : ""
+          }
+          href="/"
+        >
+          Home
+        </Link>
       </li>
       <li>
-        <Link href="/contact">Contact</Link>
+        <Link
+          className={
+            pathName === "/about" ? "text-green-400 font-bold underline" : ""
+          }
+          href="/about"
+        >
+          About
+        </Link>
       </li>
       <li>
-        <Link href="/blogs">Blogs</Link>
+        <Link
+          className={
+            pathName === "/contact" ? "text-green-400 font-bold underline" : ""
+          }
+          href="/contact"
+        >
+          Contact
+        </Link>
       </li>
       <li>
-        <Link href="/dashboard">Dashboard</Link>
+        <Link
+          className={
+            pathName === "/blogs" ? "text-green-400 font-bold underline" : ""
+          }
+          href="/blogs"
+        >
+          Blogs
+        </Link>
       </li>
       <li>
-        <Link href="/users">Users</Link>
+        <Link
+          className={
+            pathName === "/dashboard"
+              ? "text-green-400 font-bold underline"
+              : ""
+          }
+          href="/dashboard"
+        >
+          Dashboard
+        </Link>
+      </li>
+      <li>
+        <Link
+          className={
+            pathName === "/users" ? "text-green-400 font-bold underline" : ""
+          }
+          href="/users"
+        >
+          Users
+        </Link>
       </li>
     </>
   );

@@ -11,12 +11,6 @@ const AboutPage = () => {
   return (
     <div>
       <h3>this is about page</h3>
-      <Image
-        src="https://unsplash.com/photos/pasqueflower-seed-head-against-orange-sun-mCf5-2XBjgU"
-        alt="image"
-        width={600}
-        height={350}
-      ></Image>
       <Image src="/story.png" alt="story img" width={300} height={200}></Image>
       <Image src={image} alt="image" width={400} height={200}></Image>
       <Image
@@ -24,6 +18,12 @@ const AboutPage = () => {
         alt="image"
         width={500}
         height={250}
+      ></Image>
+      <Image
+        src="https://unsplash.com/photos/pasqueflower-seed-head-against-orange-sun-mCf5-2XBjgU"
+        alt="image"
+        width={600}
+        height={350}
       ></Image>
     </div>
   );
